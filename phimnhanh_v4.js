@@ -13,7 +13,7 @@ function youtube(link,set_first){
 		var link = link.match(/(?:v=|v\/|embed\/|youtu.be\/)(.{11})/)[1];
 		var link = 'https://www.youtube.com/embed/'+link+'?modestbranding=1&enablejsapi=1&iv_load_policy=3&playerapiid=vd_youtube_component_21&disablekb=1&wmode=transparent&controls=0&fs=1&playsinline=0&showinfo=0&rel=0&autoplay=1&loop=0&vq=auto&origin=http://viethoagame.forumvi.com';
 		$('#vd_youtube_youtube_api').attr('src',link);
-		$('.vjs-poster').hide();
+		$('.vjs-poster').remove();
 	}
 }
 function google(file_1,file_2,type_1,type_2,image,set_first){
