@@ -2,7 +2,12 @@ function youtube(link,set_first){
 	var video = '<video id="vd_youtube" src="" class="markai_vd video-js vjs-default-skin" controls preload="auto"  height="360" data-setup=\'\{ "techOrder": ["youtube"], "src": "'+link+'" \}\'>';
 	if(set_first == true){
 		$('.mobile_video.phimhd').before(video);
-		videojs("vd_youtube");
+		videojs("vd_youtube").ready(function(){
+			var vid = this;
+			vid.on("ended", function(){
+				$('.mobile_video.phimhd .active').next('a').trigger('click');
+			});
+		});
 	}
 	else{
 		var link = link.match(/(?:v=|v\/|embed\/|youtu.be\/)(.{11})/)[1];
