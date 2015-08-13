@@ -21,11 +21,11 @@ function google(file_1,file_2,type_1,type_2,image,set_first){
 		var image = $('.content.clearfix img:first').attr('src');
 		var file = file_1;
 		var type = type_1;
-		var quality = '<div class="change_hd"><div class="change_content"><span onclick="changer_quality.call(this)" data="mhd" class="m_hd box_change active">B?n Thu?ng</span><span onclick="changer_quality.call(this)" data="hd" class="full_hd box_change">B?n �?p</span></div></div>';
+		var quality = '<div class="change_hd"><div class="change_content"><span onclick="changer_quality.call(this)" data="mhd" class="m_hd box_change active">Bản Thường</span><span onclick="changer_quality.call(this)" data="hd" class="full_hd box_change">Bản Đẹp</span></div></div>';
 	}
 	var video = '<video id="vd_google" class="markai_vd video-js vjs-default-skin"  controls preload="auto"  height="264" poster="'+image+'" data-setup=\'\{"example_option"\:true,"language":"vi"\}\'>';
   	video += '<source src="'+file+'" type="'+type+'" />';
-  	video += '<p class="vjs-no-js">�? xem video n�y, h�y b?t JavaScript, ho?c n�ng c?p l�n m?t tr�nh duy?t web h? tr? HTML5 video</video>';
+  	video += '<p class="vjs-no-js">Để xem video này, hãy bật JavaScript, hoặc nâng cấp lên một trình duyệt web hỗ trợ HTML5 video</video>';
 	if(set_first == true){
 		$('.mobile_video.phimhd').before(video);
 		$('.mobile_video.phimhd').before(quality);
