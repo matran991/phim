@@ -35,7 +35,7 @@ function google(file_1,file_2,type_1,type_2,image,set_first){
                 });
             }
    });
-  if(set_first == true){set_first = false;}if(set_first == false){var player2 = document.getElementById('vd_google');player2.play();}
+  if(set_first == false){var player2 = document.getElementById('vd_google');player2.play();}if(set_first == true){set_first = false;}
 }
 function phimhd(){
     load_video();
@@ -110,7 +110,7 @@ function get_phim(link,set_first){
             type_hd = false;
             label_hd = false;
           }
-          if(/.jpg|.gif|.png|.bmp/gi.test(file_1) == true){
+          if(/\.jpg|\.gif|\.png|\.bmp/gi.test(file_1) == true){
             var image = true;
           }
           else{
@@ -126,5 +126,5 @@ function get_phim(link,set_first){
   }
 }
 function load_video(){
-	$('#view_video').html('<div class="video_load mejs-container"><diiv class="load_img"><img src="http://mediaelementjs.com/js/mejs-2.18.1/loading.gif"><span>Đang Tải Phim</span></div></div>');
+  $('#view_video').html('<div class="video_load mejs-container"><diiv class="load_img"><img src="http://mediaelementjs.com/js/mejs-2.18.1/loading.gif"><span>Đang Tải Phim</span></div></div>');
 }
