@@ -120,6 +120,7 @@ li.item .search .submit:hover {background: darkmagenta;}
 .block-title .fa-star-o {font-size: 28px;vertical-align: middle;margin: 5px;color: yellow;font-weight: bold;}
 .block.hotest {background: black;}
 .slide a[onclick*="get_topic"]:hover:after {font-size: 54px;top: 30%;left:30%;padding: 0 20px;line-height: 82px;}
+.block-body.slider img {min-height: 208px;max-height: 208px;}
 /* Nav Page */
 span.page_nav{margin-top:15px;overflow:hidden;clear:both;display:block;text-align:center;font-size:14px;text-transform:uppercase;background:#DDDEE0}
 .page_nav .desc{margin-right:5px}
@@ -216,7 +217,6 @@ span.page_nav{margin-top:15px;overflow:hidden;clear:both;display:block;text-alig
 	.container .col-lg-8 {padding: 1px;}
 	.list-film.row .item {height: 250px;width: 100%;}
 	.list-film.row .item img {height: 200px;}
-	.box_forum.box_right {display: none;}
 	#view_video {width: 93%;margin: 0 auto;}
 	.mejs-controls .mejs-fullscreen-button button {right: 5px;}
 	.mejs-controls div.mejs-time-rail {display:none;}
