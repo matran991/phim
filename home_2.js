@@ -163,10 +163,16 @@ function set_topic(a){
   $('.box_like').html('<div class="fb-like" data-layout="button" data-href="'+url+'" data-colorscheme="dark"></div><div class="g-plusone" data-size="medium" data-href="'+url+'"></div>');
     gapi.plusone.go("content");
     gapi.comments.render('google_comments',{href:url,width: 680,first_party_property: 'BLOGGER',view_type: 'FILTERED_POSTMOD'});
+   var slideWidth = 170;
+   var maxSlides = 4;
+   if($(window).width() < 800){
+   	var slideWidth = $(window).width() - 14;
+   	var maxSlides = 1;
+   }
   	$('.movie_slide_body:first').bxSlider({
-    	slideWidth: 170,
+    	slideWidth: slideWidth,
     	minSlides: 1,
-    	maxSlides: 4,
+    	maxSlides: maxSlides,
     	slideMargin: 14
   	});
     check_load = true;
