@@ -247,8 +247,6 @@ function google(file_1,file_2,type_1,type_2,image,set_first){
             success: function(player, node) {
                 player.addEventListener('ended', function(e){
                     $('#episode .active').next('a').trigger('click');
-                    var player2 = document.getElementById('vd_google');
-                    player2.play();
                 });
             }
    });
