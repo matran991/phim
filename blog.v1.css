@@ -1,0 +1,49 @@
+a[href*="editpost"]:before {content: "Sửa Bài Viết";}
+a[href*="editpost"] {display: block;}
+.profile-icons {float: none!Important;}
+.profile-icons a, .profile-icons,.profile-icons li {width: inherit!Important;    margin: 0;text-align: center;}
+.mobile_video.phimhd strong {margin-right: 20px;min-width: 200px;display: inline-block;color: cyan;}
+.mobile_video.phimhd a {background: darkcyan;color: white;padding: 1px 5px;margin: 0 5px;}
+.mobile_video.phimhd a:hover,.mobile_video.phimhd .active {background: darkmagenta;}
+.movie_online {width: 90%;margin: 10px auto;border: 1px solid;}
+.markai_vd {width: 100%!important;}
+.change_hd {border-top: 1px solid;}
+#player_video{margin:20px 0}
+#episode {box-shadow: inset 0 0 3px #18283c;background: #1B2D43;margin: 5px 0;padding: 10px 15px;line-height: 30px;}
+.server:before {content: "\f1c0  ";}
+.server {font-family: FontAwesome;}
+#episode a:hover,#episode .active,.box_change:hover,.zoom_video span:hover {background: #45CCFF;}
+#episode a {margin: 5px;background: #223955;color: #eee;height: 25px;line-height: 25px;padding: 5px 10px;min-width: 45px;text-align: center;font-weight: 700;border-radius: 4px;-webkit-transition: background .1s ease-in-out 0s;-khtml-transition: background .1s ease-in-out 0s;-moz-transition: background .1s ease-in-out 0s;-ms-transition: background .1s ease-in-out 0s;-o-transition: background .1s ease-in-out 0s;transition: background .1s ease-in-out 0s;  };}
+.box_change:before, .zoom_video span:before {color: #45CCFF;}
+.box_change:hover:before, .zoom_video span:hover:before {color: white;}
+.change_content {padding: 10px;text-align: center;}
+.box_change.active, .box_change:hover {background: darkmagenta;}
+.box_change {margin: 20px;background: darkcyan;padding: 5px;cursor: pointer;}
+.mobile_video.phimhd {display: block;opacity: 1;padding: 10px;border-top: 1px solid;}
+sub {display: inline-block;text-align: center;margin: 20px auto;border: 2px solid darkorchid;line-height: 30px;}
+.fb-like.fb_iframe_widget {display: block;}
+sub:before {content: "\f0ed  Download";display: block;background: darkorchid;padding: 5px;font-size: 20px;min-width: 200px;}
+sub div[align="center"] {padding: 5px;}
+sub div[align="center"] a {display: inline-block;}
+.vjs-big-play-button {left: 43%!Important;top: 38%!Important;background: black!important;}
+.spoiler {border: 2px solid darkcyan;margin: 20px;background: black!Important;}
+.spoiler dt {padding: 5px;background: darkcyan;position: relative;}
+.spoiler dt:after {content: "\f067";position: absolute;right: 10px;}
+.spoiler:hover,.spoiler:hover dt {border-color: darkorchid;background: darkorchid;}
+span.mejs-time-total, .mejs-controls div.mejs-time-rail {width: 70%!important;}
+@media only screen and (max-device-width: 860px) {
+  .content.clearfix {margin-left: 0!Important;}
+  .content ul {margin-left: 0;margin-bottom: 10px;}
+  dl.spoiler {margin: 0;}
+  .pathname-box {margin-left: 0;}
+  .breadcrumb .crust a.crumb {left: 0;padding-right: 0!important;padding-left: 0!important;font-size: 16px;}
+  .breadcrumb .crust .arrow {display: none;}
+  fieldset.breadcrumb {border: 0;margin-bottom: 0;padding-left: 5px;}
+  span.crust.homeCrumb:last-child a span:after {display: none;}
+  .breadcrumb .crust a.crumb > span {word-wrap: break-word;overflow: inherit!important;}
+  .breadcrumb {overflow: inherit;height: inherit!important;}
+  .breadcrumb .crust a.crumb span:after {content: ">";font-size: 12px!important;position: relative;padding: 0 5px;color: white;vertical-align: bottom;}
+  h2.post-content {display: none;}
+  .clearfix {display: none;}
+  .content.clearfix {display: block;}
+}
