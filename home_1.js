@@ -98,6 +98,7 @@ function set_item(data,forum){
 	$('.page_nav').html(page2);
 	check_load = true;
 	load_end();
+	scroll();
 }
 function facebook(){
 	(function(d, s, id) {
@@ -175,6 +176,7 @@ function set_topic(a){
     set_first = true;
     set_hd = false;
     check_get = true;
+    scroll();
     get_phim(video_first,set_first);
 }
 function spoiler(){
@@ -324,4 +326,9 @@ function get_phim(link,set_first){
 			}
 		});
 	}
+}
+function scroll(){
+	$('html, body').animate({
+      scrollTop: $(".content-body .box_left").offset().top
+  }, 500);
 }
