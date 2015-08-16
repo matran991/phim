@@ -125,3 +125,6 @@ function get_phim(link,set_first){
     });
   }
 }
+function load_video(){
+	$('#view_video').html('<div class="video_load mejs-container"><diiv class="load_img"><img src="http://mediaelementjs.com/js/mejs-2.18.1/loading.gif"><span>Đang Tải Phim</span></div></div>');
+}
