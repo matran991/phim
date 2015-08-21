@@ -14,7 +14,7 @@ function google(file_1,file_2,type_1,type_2,image,set_first){
     var quality = "";
   }
   else{
-    var image = $('.content.clearfix img:first').attr('src');
+    var image = $('.spoiler_content img:first').attr('src');
     var file = file_1;
     var type = type_1;
     if(file_2 == false){
@@ -120,7 +120,7 @@ function get_phim(link,set_first){
         }
       }
       else{
-        $('#view_video').html('<div class="warning"><i class="fa fa-warning"></i>  Đã xảy ra lỗi, xin vui lòng thông báo với chúng tôi để sửa lỗi. Cảm ơn.</div>')
+        $('#view_video').html('<div class="warning warning alert alert-danger"><i class="fa fa-warning"></i>  Đã xảy ra lỗi, xin vui lòng thông báo với chúng tôi để sửa lỗi. Cảm ơn.</div>')
       }
     });
   }
