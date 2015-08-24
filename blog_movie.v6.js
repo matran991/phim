@@ -43,7 +43,7 @@ function phimhd(){
     $(this).addClass('active');
     var link = $(this).attr('href');
     check_get = true;
-    get_phim(link,set_first);
+    get_phim(link,set_first,hosting);
 }
 function changer_quality(){
   var active = $(this).attr('class');
@@ -68,6 +68,7 @@ function changer_quality(){
 function get_phim(link,set_first,host){
   if(check_get == true){
     check_get = false;
+    hosting = host;
     $.get(''+host+'/phimhd.php?url='+link+'').done(function(a){
       if(/file|playlist/gi.test(a) == true){
         data = $($(a)[0]).text();
