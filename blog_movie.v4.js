@@ -65,10 +65,10 @@ function changer_quality(){
       video.play();
   }
 }
-function get_phim(link,set_first){
+function get_phim(link,set_first,host){
   if(check_get == true){
     check_get = false;
-    $.get('http://upvhg.web44.net/phimhd.php?url='+link+'').done(function(a){
+    $.get(''+host+''/phimhd.php?url='+link+'').done(function(a){
       if(/file|playlist/gi.test(a) == true){
         data = $($(a)[0]).text();
         data = eval('('+data+')');
@@ -127,4 +127,27 @@ function get_phim(link,set_first){
 }
 function load_video(){
   $('#view_video').html('<div class="video_load mejs-container"><diiv class="load_img"><img src="http://mediaelementjs.com/js/mejs-2.18.1/loading.gif"><span>Đang Tải Phim</span></div></div>');
+}
+function zoom_in(){
+	var width = $('.container').width();
+	var height = $('.media_body').height() + 75;
+	$('.media_body').animate({width: ''+width+'px'});
+	$('.box_box_right').animate({'margin-top': ''+height+'px'});
+}
+function zoom_out(){
+	var width = $('.media_block').width();
+	$('.media_body').animate({width: ''+width+'px'});
+	$('.box_box_right').animate({'margin-top': '0px'});
+}
+undefined
+function zoom_in(){
+	var width = $('.container').width();
+	var height = $('.media_body').height() + 75;
+	$('.media_body').animate({width: ''+width+'px'});
+	$('.box_box_right').animate({'margin-top': ''+height+'px'});
+}
+function zoom_out(){
+	var width = $('.media_block').width();
+	$('.media_body').animate({width: ''+width+'px'});
+	$('.box_box_right').animate({'margin-top': '20px'});
 }
