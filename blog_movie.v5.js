@@ -68,7 +68,7 @@ function changer_quality(){
 function get_phim(link,set_first,host){
   if(check_get == true){
     check_get = false;
-    $.get(''+host+''/phimhd.php?url='+link+'').done(function(a){
+    $.get(''+host+'/phimhd.php?url='+link+'').done(function(a){
       if(/file|playlist/gi.test(a) == true){
         data = $($(a)[0]).text();
         data = eval('('+data+')');
