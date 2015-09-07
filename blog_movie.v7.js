@@ -69,10 +69,8 @@ function get_phim(link,set_first,host){
   if(check_get == true){
     check_get = false;
     hosting = host;
-    $.get(''+host+'/phimhd.php?url='+link+'').done(function(a){
-      if(/file|playlist/gi.test(a) == true){
-        data = $($(a)[0]).text();
-        data = eval('('+data+')');
+    $.getScript(''+host+'/phimhd.php?url='+link+'').done(function(){
+      if(data){
         if(data.Video.file != undefined){
           var file = data.Video.file;
           if(/youtube|dailymotion/gi.test(file) == true){
