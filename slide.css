@@ -1,204 +1,328 @@
-/**
- * BxSlider v4.1.2 - Fully loaded, responsive content slider
- * http://bxslider.com
- *
- * Written by: Steven Wanderski, 2014
- * http://stevenwanderski.com
- * (while drinking Belgian ales and listening to jazz)
- *
- * CEO and founder of bxCreative, LTD
- * http://bxcreative.com
- */
+/* Default */
+#wrap {min-width: inherit;width: 100%;padding: 0}
+#phpbb {padding: 0;background: #e9eaed;}
+a {text-decoration: inherit!Important;display: inline-block;}
+a:hover {color: darkorange}
+.fade {background-image: none}
+.tran{-webkit-transition: all .2s ease-in-out 0s;-o-transition: all .2s ease-in-out 0s;-khtml-transition: all .2s ease-in-out 0s;-moz-transition: all .2s ease-in-out 0s;-ms-transition: all .2s ease-in-out 0s}
+li {list-style-type: none}
+ol, ul {padding: 0}
+div {float: left;width: 100%}
+p,div,a,span{word-wrap: break-word;}
+img, iframe, embed,object,textarea {max-width: 100%;}
+.pad5{padding:5px;}
+/* Header */
+#header{padding-bottom:18px;background:#23334b;border-bottom: 10px solid #3592D2;}
+#header .menu-trigger{display:none}
+#header .menu-trigger .fa{font-size:30px;color:#45CCFF}
+#header #logo{background-position:0 0;width: 100%;font-size:12px;padding:0;margin: 15px 0;margin-left:auto;margin-right:auto}
+#header #logo a{color: white;display:block;font-size: 50px;padding-left:5px;text-transform: uppercase;font-family: Courier New;font-weight: bold;text-shadow: 2px 2px 2px #E4D136;}
+#header #search{margin-top:17px;position:relative;box-sizing:border-box}
+#header #search,#header #search .keyword{-webkit-box-sizing:border-box;-khtml-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box}
+#header #search .keyword,#header #search .submit{border:none;float:left;background-color:#1c2a3e;height:46px}
+#header #search .keyword{line-height:46px;padding-left:46px;padding-right:20px;font-size:13px;color:#ddd;width:100%;outline:0;box-sizing:border-box}
+#header #search .submit{background-position:-151px 3px;width:46px;cursor:pointer;display:none}
+#header #search.style2 .icon{display:none}
+#header #search.style2 .keyword{background-image:none}
+#header #search.style2 .submit{display:block;position:absolute;left:0;top:0}
+#header #search.style2 .submit:hover{opacity:.6}
+#header #search ul.autocomplete-list{position:absolute;top:45px;width:95%;display:block;padding:0;background:#1c2a3e;z-index:1001}
+#header #search ul.autocomplete-list li a{font-size:13px;color:#ddd;display:block;padding-left:45px;padding-bottom:10px;padding-top:10px;overflow:hidden;border-bottom:1px solid #23334b;border-top:1px solid #375074}
+#header #search ul.autocomplete-list li a strong{color: #fff}
+#header #search ul.autocomplete-list li a:hover{background:#2F4461}
+#header .logged{color:#eee;margin-top:22px;font-size:14px}
+#header .logged .welcome{display:block;overflow:hidden;height:20px}
+#header .logged .welcome .user{color:#45CCFF}
+#header .logged .links{margin-top:3px;font-size:11px}
+#header #signing .signin,#header #signing .signup,#menu ul li.item a{font-weight:700;display:block;font-size:14px;text-transform:uppercase}
+#header .logged .links a{float:left;color:#007cab;-webkit-transition:color .1s ease-in-out 0s;-khtml-transition:color .1s ease-in-out 0s;-moz-transition:color .1s ease-in-out 0s;-ms-transition:color .1s ease-in-out 0s;-o-transition:color .1s ease-in-out 0s;transition:color .1s ease-in-out 0s;padding:0 9px}
+#header .logged .links a:hover{color:#00b4f7}
+#header .logged .links a+a{border-left:1px solid #005778}
+#header #signing{height:36px;margin-top:22px;-webkit-box-shadow:rgba(69,204,255,.2)0 0 0 6px;-khtml-box-shadow:rgba(69,204,255,.2)0 0 0 6px;-moz-box-shadow:rgba(69,204,255,.2)0 0 0 6px;-ms-box-shadow:rgba(69,204,255,.2)0 0 0 6px;-o-box-shadow:rgba(69,204,255,.2)0 0 0 6px;box-shadow:rgba(69,204,255,.2)0 0 0 6px}
+#header #signing .signin,#header #signing .signup{float:left;line-height:36px;position:relative;width:50%;height:36px;text-align:center;transition:all .2s ease-in-out 0s}
+#header #signing .signin,#header #signing .signin:after,#header #signing .signup,#header #signing .signup:after{-khtml-transition:all .2s ease-in-out 0s;-moz-transition:all .2s ease-in-out 0s;-ms-transition:all .2s ease-in-out 0s}
+#header #signing .signin,#header #signing .signin:after,#header #signing .signup,#header #signing .signup:after,.block .block-title a{-webkit-transition:all .2s ease-in-out 0s;-o-transition:all .2s ease-in-out 0s}
+#header #signing .signin:before,#header #signing .signup:before{position:absolute;content:"";height:2px;width:14px;background-color:rgba(69,204,255,.2)}
+#header #signing .signin:after,#header #signing .signup:after{transition:all .2s ease-in-out 0s;position:absolute;content:"";top:0;z-index:100;width:0;height:0;border-style:solid}
+#header #signing .signup{margin-right:0;background-color:#1a2b44;color:#fff;-webkit-box-shadow:rgba(69,204,255,.2)-9px 0 0 2px;-khtml-box-shadow:rgba(69,204,255,.2)-9px 0 0 2px;-moz-box-shadow:rgba(69,204,255,.2)-9px 0 0 2px;-ms-box-shadow:rgba(69,204,255,.2)-9px 0 0 2px;-o-box-shadow:rgba(69,204,255,.2)-9px 0 0 2px;box-shadow:rgba(69,204,255,.2)-9px 0 0 2px}
+#header #signing .signup:before{top:-2px;right:-7px}
+#header #signing .signup:after{right:-5px;border-width:36px 10px 0 0;border-color:#1a2b44 transparent transparent}
+#header #signing .signup:hover{background-color:#253e62}
+#header #signing .signup:hover:after{border-color:#253e62 transparent transparent}
+#header #signing .signin{margin-left:0;background-color:#45ccff;color:#273855;-webkit-box-shadow:rgba(69,204,255,.2)9px 0 0 2px;-khtml-box-shadow:rgba(69,204,255,.2)9px 0 0 2px;-moz-box-shadow:rgba(69,204,255,.2)9px 0 0 2px;-ms-box-shadow:rgba(69,204,255,.2)9px 0 0 2px;-o-box-shadow:rgba(69,204,255,.2)9px 0 0 2px;box-shadow:rgba(69,204,255,.2)9px 0 0 2px}
+#header #signing .signin:before{bottom:-2px;left:-7px}
+.block.info-film .col2 .buttons .watch a:after,.mbtn span:after{bottom:-6px}
+#header #signing .signin:after{left:-5px;border-width:0 0 36px 10px;border-color:transparent transparent #45ccff}
+#header #signing .signin:hover{background-color:#00a9e8}
+#header #signing .signin:hover:after{border-color:transparent transparent #00a9e8}
+#header .style2 i {color: white;position: absolute;top: 10px;font-size: 24px;}
+/* Menu */
+#menu{background-color:#fff;-webkit-box-shadow:#bbb 0 2px 2px 0;-khtml-box-shadow:#bbb 0 2px 2px 0;-moz-box-shadow:#bbb 0 2px 2px 0;-ms-box-shadow:#bbb 0 2px 2px 0;-o-box-shadow:#bbb 0 2px 2px 0;box-shadow:#bbb 0 2px 2px 0}
+#menu ul{list-style:none;margin:0;padding:0}
+#menu ul li.item{float:left;position:relative;z-index:1000;height:60px}
+#menu ul li.item a{padding:0 10px;line-height:60px;color:#1a2b44;transition:color .2s ease-in-out 0s}
+#menu ul li.item .sub li a,#menu ul li.item a{-webkit-transition:color .2s ease-in-out 0s;-khtml-transition:color .2s ease-in-out 0s;-moz-transition:color .2s ease-in-out 0s;-ms-transition:color .2s ease-in-out 0s;-o-transition:color .2s ease-in-out 0s}
+#menu ul li.item:hover:before{height:4px;display:block;content:"";width:100%;background:#2bc5ff;top:0;left:0;position:absolute}
+#menu ul li.item:hover a{background-color:#192638;color:#3eb3e1}
+#menu ul li.item:hover .sub{display:block}
+#menu ul li.item .sub{display:none;position:absolute;background-color:#192638;overflow:hidden;width:520px;top:60px;left:0}
+#menu ul li.item .sub li{float:left}
+#menu ul li.item .sub li a{display:block;border:none;color:#fff;font-size:12px;text-transform:none;font-weight:400;width:170px;padding:0 20px;line-height:40px;transition:color .2s ease-in-out 0s}
+#menu ul li.item a:hover {color: white;}
+#menu ul li.item .sub li a:hover{background-color:#45CCFF;color:#000}
+li.item .search {line-height: 60px;  padding: 0 10px;}
+li.item .search i .keyword {line-height: 14px;}
+li.item .search .keyword {line-height: 30px;}
+li.item .search .submit {line-height: 33px;font-family: FontAwesome;background: cadetblue;color: white;border: 0!important;}
+li.item:hover .search {background: #192638;}
+li.item .search .submit:hover {background: darkmagenta;}
+li.item .search .submit {display: inline-block;margin: 5px;}
+/* Nav user */
+.thong_tin_user,.tin_nhan_rieng,.thiet_lap {vertical-align: middle;line-height: 40px;min-height: 80px;text-align: center;margin-right: 10px;cursor: pointer}
+.avata_user {background-repeat: round;position: absolute;top: 0;bottom: 20px;left: 0;right: 0}
+.col-md-7.user_name {vertical-align: middle}
+#user_top a {color: white}
+.thiet_lap a {display: inline-block}
+#user_top {margin-top: 20px}
+.user_name {position: absolute;bottom: 0;left: 0;right: 0;line-height: 20px;overflow: hidden}
+.user_name a {font-size: 16px}
+.user_name a {white-space: nowrap;      overflow: hidden;      text-overflow: ellipsis;display: block;      width: 100%}
+.tin_nhan_rieng {background: darkorange}
+.col-md-3 i {font-size: 60px;position: absolute;top: 10px;left: 0;right: 0}
+#header #logo {margin-top: 24px;margin-bottom: 0;height: 76px}
+#header #logo a {position: relative;top: 8px;text-align: center}
+.avata_user span {width: 60px;height: 60px;display: block;margin: 0 auto;background-repeat: round}
+.thiet_lap {background: darkred}
+#user_top ul a {color: inherit}
+#user_top ul a i {font-size: inherit;position: inherit;width: 20px}
+.thiet_lap:hover .thiet_lap_box {display: block;top: 96%}
+.thong_tin_user:hover, .tin_nhan_rieng:hover, .thiet_lap:hover {background: darkmagenta}
+/* Login pop */
+#autologin {display: inline-block}
+.modal-header {background: #23334b;color: white}
+.modal-body {background: white}
+.login_close, #login_pop .frm-buttons input {background: #45ccff;color: white;border-radius: 0;border: 0;-webkit-transition: all .2s ease-in-out 0s;-o-transition: all .2s ease-in-out 0s;-khtml-transition: all .2s ease-in-out 0s;-moz-transition: all .2s ease-in-out 0s;-ms-transition: all .2s ease-in-out 0s;vertical-align: initial;padding: 5px 10px;text-shadow: 0 0 0;}
+.login_close:hover,#login_pop .frm-buttons input:hover {background: darkcyan;color: white}
+#login_pop .frm-buttons {display: block;text-align: center;float: none}
+.alert a {color: inherit}
+.login_popup_form .alert,.login_popup_form .fb.left,.login_popup_form li {width: 100%}
+fieldset dl:hover dt label {color: inherit;font-weight: bold}
+.login_popup_form legend {display: none}
+.login_popup_form a[href^="/register"] {background: none;border: 0;padding: 0;vertical-align: inherit;color: inherit;font-weight: bold}
+.login_popup_form a[href^="/register"]:hover,.alert a:hover,.close:hover {color: darkorange;background: none;opacity: 1}
+.form-control {cursor: auto}
+.close {opacity: 1}
+.modal-dialog {float: none}
+.login_popup_form .button2 {margin-right: 10px}
+/* Box Forum */
+#box_forum {margin-top: 10px}
+.bor_forum_left {display: inline-block;margin-left: 20px}
+.forum_box_name {padding: 5px;background: #23334B;color: white;font-size: 20px;position: relative;z-index: 9}
+.bor_forum_right {position: absolute;right: 0;top: 0;bottom: 0;background: #45CCFF;display: inline-block;width: 20%;overflow: hidden;text-align: center;font-size: 30px;max-width: 100px;}
+.bor_forum_right:before {transition: all .2s ease-in-out 0s;position: absolute;content: "";top: -7px;z-index: 2;width: 0;height: 0;border-style: solid;left: 0px;border-width: 0 0 45px 10px;border-color: transparent transparent #45CCFF;background: #23334B;}
+.bor_forum_left:before {content: "";background: #45CCFF;top: 0;bottom: 0;width: 10px;left: 0;position: absolute}
+.forum_box_head_grid {background: #E2E2E2;font-size: 15px;line-height: 25px}
+.forum_box_list {background: white;margin: 10px 0;border-top: 0;}
+.forum_box_box h3 {margin: 0;padding: 5px}
+.forum_box_box_grid {border-bottom: 1px solid #e1e1e8;line-height: 25px}
+.forum_box_box_grid:last-child {border: 0}
+.forum_topic_list .forum_header,.forum_box_list .forum_header{border-right: 1px solid #ccc}
+.forum_box_list .forum_header {min-height: 80px;    padding-left: 0}
+.box_chi_tiet span {padding: 0 5px}
+.forum_box_name h2 {margin: 0;font-size: 20px;display: inline-block}
+.forum_box_box.tag,.forum_box_box.online,.fanpage {padding: 5px;word-wrap: break-word}
+.noi_dung_box br {display: none}
+.box_noidung span {display: block}
+.forum_box_img {position: absolute;top: 0;bottom: 0;left: 0;right: 0;border-right: 1px solid #ccc;text-align: center}
+.box_noidung .fa {position: absolute;left: 0;right: 83%;font-size: 40px;top: 30%;text-align: center}
+.forum_box_url {padding-left: 20%}
+.box_noidung[style*="unread"] em {color: crimson}
+.box_noidung[style*="unread"] em:after {content: "Có bài mới";font-size: 12px;display: block}
+.forum_box_box.tag a {margin-right: 3px}
+.box_like span {width: 60px!important;overflow: hidden!important;display: inline-block}
+/* Login Index */
+.online form div {padding: 10px 0}
+.auto_input input {display: inline-block}
+.online form {text-align: center}
+.input_input input,.input_input a {background: darkgreen;color: white;padding: 5px 10px;border: 0;display: inline-block;margin: 0 10px}
+.input_input input:hover {background: darkcyan}
+.online legend {display: none}
+.forum_topic_list .forum_box_list {border: 0;margin-top: 0}
+.forum_topic_list .forum_box_url {padding-left: 10%}
+.box_author a {display: inline-block}
+/* Footer */
 
+#footer-section {position: relative;background: none repeat scroll 0 0 #00a2d9}
+#sub-footer {background: black}
+.footer-foreground {margin-top: 20px;margin-bottom: 20px;padding: 10px 10px 0;color: #fff;border-radius: 4px;background: none repeat scroll 0 0 rgba(0, 0, 0, .25)}
+.footer-foreground a {color: #fff}
+.bottomLinks {padding: 20px 0}
+.copyrights {color: #869aaf}
+.copyrights i {font-size: 12px}
+.copyrights a {padding-bottom: 1px;text-decoration: none;border-bottom: 1px solid rgba(0, 0, 0, .1)}
+.footer-nav li {padding: 5px 5px 0}
+.footer-nav a {color: #fff}
+.text-overflow {overflow: hidden;white-space: nowrap;text-overflow: ellipsis}
+.debug-output {display: block;text-align: right;color: #869aaf}
+.interact a {margin-right: 10px}
+.twitter-time {color: #869aaf}
+.twitter h3 a small {text-transform: none;color: #869aaf}
 
-/** RESET AND LAYOUT
-===================================*/
+/* ===[ SOCIAL ICONS ]=== */
+.socialbar {margin: 10px 0}
+.social-network {text-align: right}
+.socialbar .social-icons li {line-height: 1em;display: inline-block;height: 38px;margin: 0 3px}
+.social-network a {font-size: 22px;display: inline-block;width: 30px;height: 30px;margin: 0 3px;transition: all .2s linear 0s;text-align: center;color: #fff !important;border-radius: 2px}
+.social-network a:hover {transition: all .1s linear 0s;color: #2d2d2d!important;border-bottom: none;background-color: #fff}
+.google-plus-color {background-color: #d34836}
+.pinterest-color {background-color: #cb2027}
+.facebook-color {background-color: #3b5998}
+.behance-color {background-color: #1769ff}
+.dropbox-color {background-color: #007ee5}
+.envato-color {background-color: #82b540}
+.twitter-color {background-color: #00aced}
+.rss-color {background-color: #e48645}
+.rss-color-forum {color: #e48645}
+.github-color {background-color: #333}
+footer.burned-asphalt {background: black;float: left;width: 100%}
+/* Topic list */
+.box_hien_img[title*="_unread"]:before,.box_hien_img[title*="folder_announce_new1"]:before{color:red}
+.box_hien_img[title*="announce_read"]:before, .box_hien_img[title*="announce_unread"]:before{content:"\f0a2"}
+.box_hien_img[title*="folder_announce1"]:before, .box_hien_img[title*="folder_announce_new1"]:before{content:"\f071"}
+.box_hien_img[title*="sticky_read"]:before, .box_hien_img[title*="sticky_unread"]:before{content:"\f0a1"}
+.box_hien_img[title*="topic_read"]:before, .box_hien_img[title*="topic_unread"]:before,.box_hien_img[title*="topic_unread_hot"]:before{content:"\f0e5"}
+.box_hien_img[title*="topic_read_locked"]:before, .box_hien_img[title*="topic_unread_locked"]:before{content:"\f023"}
+.box_hien_img[title*="topic_read_hot"]:before{content:"\f006";color:gold}
+.box_hien_img:before{font-size:50px;vertical-align:middle;padding:5px;font-weight:100!Important;color: black;font-family: FontAwesome;text-align: center;margin: 0 auto;display: block;}
+.forum_topic_list .forum_box_img {padding: 0}
+.forum_topic_list {border: 0;background: inherit}
+.forum_topic_list .inner {background: white}
+.forum_topic_list .forum_header {border-right: 1px solid #ccc}
+.topic_list_box .forum_box_box {border-bottom: 1px solid #ccc}
+.topic_list_box .forum_box_box:last-child {border: 0}
+.noi_dung_box {padding: 0 5px}
+.block_post .post-icon {margin-top: 10px}
+.block_post .forum_box_mod {padding: 5px}
+.post-icon {text-align: center}
+.post-icon a {display: block;width: 120px;height: 120px;margin: 0 auto;background: darkcyan;color: white;font-size: 18px}
+.post-icon a i {font-size: 93px;display: block}
+.post-icon a:hover {background: darkmagenta}
+.block_title {min-height: 140px;position: relative}
+.block_title h1 {position: absolute;top: 0;text-align: center;left: 0;right: 0;bottom: 0;background: #23334B;margin: 0;margin-top: 10px;margin-bottom: 13px}
+.block_title h1 a {position: absolute;left: 2%;right: 2%;top: 10%;color: white;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;line-height: 50px}
+.block_title h1:before,.block_title h1:after {content: "";background: #45CCFF;display: inline-block;position: absolute;left: 0;top: 0;width: 10px;bottom: 0}
+.block_title h1:after {left: 100%}
+.block_title h1 a:hover {color: darkorange}
+/* Breadcrumb */
+.breadcrumb{overflow: hidden;width: 100%;background: #23334B;margin-bottom: 0;padding: 0}
+.breadcrumb li{float: left;margin: 0 10px 0 10px}
+.breadcrumb a{background: #ddd;padding: .7em 1em;float: left;text-decoration: none;color: white;text-shadow: 0 1px 0 rgba(255,255,255,.5); position: relative}
+.breadcrumb a:hover{background: #efc9ab}
+.breadcrumb a::before,
+.breadcrumb a::after{content:'';position:absolute;top: 0;bottom: 0;width: 1em;background: #ddd;transform: skew(-10deg);  }
+.breadcrumb a::before{left: -.5em;display: inline-block}
+.breadcrumb a:hover::before{background: #efc9ab}
+.breadcrumb a::after{right: -.5em;   display: inline-block}
+.breadcrumb a:hover::after{background: #efc9ab}
+.breadcrumb .current,
+.breadcrumb .current:hover{font-weight: bold;background: none}
+.breadcrumb .current::after,
+.breadcrumb .current::before{content: normal}
+.breadcrumb>li+li:before {display: none}
+.breadcrumb li:first-child a:before {background: #45CCFF;transform: inherit;left: -10px}
+.breadcrumb_block {background: #45CCFF;position: relative;color: white}
+.breadcrumb li:nth-child(1) a, .breadcrumb li:nth-child(1) a:after {background: darkcyan}
+.breadcrumb li:nth-child(2) a, .breadcrumb li:nth-child(2) a:after,.breadcrumb li:nth-child(2) a:before {background: darkmagenta}
+.breadcrumb li:nth-child(3) a, .breadcrumb li:nth-child(3) a:after, .breadcrumb li:nth-child(3) a:before {background: darkorchid}
+.breadcrumb li:nth-child(4) a, .breadcrumb li:nth-child(4) a:after, .breadcrumb li:nth-child(4) a:before {background: darkgoldenrod}
+.breadcrumb li:nth-child(5) a, .breadcrumb li:nth-child(5) a:after, .breadcrumb li:nth-child(5) a:before {background: darkgreen}
+.breadcrumb li a:hover,.breadcrumb li a:hover:after,.breadcrumb li a:hover:before {background: darkorange}
+.breadcrumb li:first-child a:hover:before {background: #45CCFF}
+/* pagination */
+.pagination{margin-top:15px;overflow:hidden;clear:both;display:block;text-align:center;font-size:14px;text-transform:uppercase;background:#DDDEE0}
+.pagination .desc{margin-right:5px}
+.pagination .current,.pagination .item{margin:0 2px}
+.pagination .current,.pagination .item a{background:#1a2b44;padding:7px 14px;font-weight:700;color:#fff;display:inline-block}
+.pagination .current,.pagination .item a:hover{background-color:#45CCFF}
+/* View Topic */
+.view_topic .post-icon a {display: inline-block;margin-right: 20px}
+.postprofile {height: 100%;position: relative;margin: 10px 0;display: inline-block}
+.box_view_topic {margin: 20px 0}
+.post_body {background: white;min-height: 250px;padding: 0}
+.post_topic {background: #DDDDDD;margin:  10px 0}
+.avata_img img {padding: 10px;background: white;width: 90px;height: 90px}
+.box_profile_left {margin: 3px 0;background: white;padding: 0 5px;text-align: center}
+.total_post_label {text-align: left}
+.postprofile br {display: none}
+.post_body .content.clearfix {padding: 0 15px;line-height: 30px;margin-bottom: 90px}
+.post_body .author {background: #23334B;color: white;padding: 10px;position: relative}
+.box_profile_left a {word-wrap: break-word;width: 100%}
+.tool_post li {display: inline-block;width: 100px;height: 75px;text-align: center;position: relative}
+.tool_post {text-align: right;position: absolute;bottom: 0}
+.tool_post li a:first-child {display: none}
+.tool_post li a:last-child {display: block}
+.tool_post li .fa {font-size: 53px;display: block}
+.content.clearfix u {display: none}
+.fb-like:before {content: "\f087";color: #337AB7;font-family: FontAwesome;font-size: 40px;display: block}
+.fb-like {position: absolute;top: 0;bottom: 0;text-align: center;left: 0}
+.fb-like:hover:before {color: darkorange}
+a.vote-plus {position: absolute;top: 0;bottom: 0;left: 0;right: 0}
+li.vote_topic {top: 5px}
+#quick_reply {width: 100%;float: left}
+#quickreply .wysibb-body, #quickreply #editor {min-height: 200px!important;max-height: 200px!important}
+#quickreply .submit_post {background: #E9EAED}
+#quickreply .forum_box_mod {padding: 0}
+.forum_box_list.rules .forum_box_mod {font-weight: bold}
+.wysibb .wysibb-toolbar .wysibb-toolbar-container {width: inherit}
+.wysibb-body {min-height: 400px!important}
+#quickreply .wbb-header,#quickreply .wbb-thanker,#quickreply .wbb-download,#quickreply .wbb-spoiler,#quickreply .wbb-quote,#quickreply .wbb-tbl,#quickreply .wbb-italic,#quickreply .wbb-underline,#quickreply .wbb-fontfamily,#quickreply .wbb-bullist,#quickreply .wbb-numlist {display: none!important}
+#quickreply .wbb-fontsize {width: 40px!Important}
+.wysibb .wysibb-toolbar .wysibb-toolbar-container .wysibb-toolbar-btn .fa {color: #333;            font-size: 18px;      line-height: 28px;      text-shadow: 0px 1px 0px #fff;      text-align: center;      speak: none;display: block;      height: 26px;      min-width: 26px;      margin: 2px}
+.wysibb .wysibb-toolbar {min-height: 34px}
+.modesw {min-width: 100px!important}
+.frm-buttons {padding: 10px;text-align: center}
+.frm-buttons input[type="submit"] {border: 0;background: none}
+.frm-buttons .sbpost {background: darkcyan;padding: 5px;color: white}
+.frm-buttons .sbpost:hover {background: darkmagenta}
+#wbbmodal .wbbm {float: none}
+/* Posting Body */
+.box_form_post {padding: 10px}
+.panel {margin: 0;margin-top: 10px;border-radius: 0;border: 0;box-shadow: 0 0 0}
+.post_topic .forum_box_list {margin: 0}
+.forum_box_post_option,.submit-buttons {padding: 5px}
+.submit_posting input {border: 0;background: none;position: absolute;top: 0;left: 0;right: 0;bottom: 0;width: 100%;color: transparent}
+.submit_posting:after {content: "Gửi Bài"}
+.submit_posting .fa {display: block;font-size: 50px}
+.submit_posting {width: 100px;display: inline-block;margin: 0 auto;background: darkcyan;color: white;float: none;cursor: pointer;position: relative}
+.submit_post {text-align: center}
+.submit_posting:hover {background: darkmagenta}
+#postingbox .wysibb-toolbar {border: 0}
+#postingbox .wysibb-toolbar {border: 0!important;text-align: center;padding-right: 0}
+#postingbox .wysibb-toolbar-container {background: #ccc;padding: 5px;margin: 5px}
+#postingbox .modeSwitch {position: relative!important}
+#postingbox .wysibb-toolbar {min-height: 112px!important;display: block;background: #f7f7f7}
+#postingbox .wysibb-toolbar-container {float: none}
+#postingbox .wysibb-toolbar-btn {margin: 0 3px!important;background: white!important;border: 0!important;box-shadow: 0 0 0!important}
+#postingbox .wysibb .on,#postingbox .wysibb .on:active {border: 0}
+#postingbox .wysibb-toolbar-container .on {background: darkmagenta!important}
+#postingbox .wysibb-toolbar-container .on .fonticon.btn-inner,#postingbox .wysibb-toolbar-container .on .fa,#postingbox .wysibb-toolbar-container .on .val,#postingbox .wysibb-toolbar-container .on .modesw {color: white!Important}
+.poll_multiple, .poll_cancel_vote {padding: 0}
+/* Quote */
+blockquote {float: left;border: 0;padding: 0;margin: 10px;background: #C47719;display: block;position: relative;z-index: 2; width: inherit}
+blockquote cite {display: block;padding: 5px;color: white;position: absolute;top: 0;left: 0;right: 0}
 
-.bx-wrapper {
-	position: relative;
-	margin: 0 auto 60px;
-	padding: 0;
-	*zoom: 1;
-}
-
-.bx-wrapper img {
-	max-width: 100%;
-	display: block;
-}
-
-/** THEME
-===================================*/
-
-.bx-wrapper .bx-viewport {
-	-moz-box-shadow: 0 0 5px #ccc;
-	-webkit-box-shadow: 0 0 5px #ccc;
-	box-shadow: 0 0 5px #ccc;
-	border:  5px solid #fff;
-	left: -5px;
-	background: #fff;
-	
-	/*fix other elements on the page moving (on Chrome)*/
-	-webkit-transform: translatez(0);
-	-moz-transform: translatez(0);
-    	-ms-transform: translatez(0);
-    	-o-transform: translatez(0);
-    	transform: translatez(0);
-}
-
-.bx-wrapper .bx-pager,
-.bx-wrapper .bx-controls-auto {
-	position: absolute;
-	bottom: -30px;
-	width: 100%;
-}
-
-/* LOADER */
-
-.bx-wrapper .bx-loading {
-	min-height: 50px;
-	background: url(images/bx_loader.gif) center center no-repeat #fff;
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 2000;
-}
-
-/* PAGER */
-
-.bx-wrapper .bx-pager {
-	text-align: center;
-	font-size: .85em;
-	font-family: Arial;
-	font-weight: bold;
-	color: #666;
-	padding-top: 20px;
-}
-
-.bx-wrapper .bx-pager .bx-pager-item,
-.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
-	display: inline-block;
-	*zoom: 1;
-	*display: inline;
-}
-
-.bx-wrapper .bx-pager.bx-default-pager a {
-	background: #666;
-	text-indent: -9999px;
-	display: block;
-	width: 10px;
-	height: 10px;
-	margin: 0 5px;
-	outline: 0;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-}
-
-.bx-wrapper .bx-pager.bx-default-pager a:hover,
-.bx-wrapper .bx-pager.bx-default-pager a.active {
-	background: #000;
-}
-
-/* DIRECTION CONTROLS (NEXT / PREV) */
-
-.bx-wrapper .bx-prev {
-	left: 10px;
-	background: url(images/controls.png) no-repeat 0 -32px;
-}
-
-.bx-wrapper .bx-next {
-	right: 10px;
-	background: url(images/controls.png) no-repeat -43px -32px;
-}
-
-.bx-wrapper .bx-prev:hover {
-	background-position: 0 0;
-}
-
-.bx-wrapper .bx-next:hover {
-	background-position: -43px 0;
-}
-
-.bx-wrapper .bx-controls-direction a {
-	position: absolute;
-	top: 50%;
-	margin-top: -16px;
-	outline: 0;
-	width: 32px;
-	height: 32px;
-	text-indent: -9999px;
-	z-index: 9999;
-}
-
-.bx-wrapper .bx-controls-direction a.disabled {
-	display: none;
-}
-
-/* AUTO CONTROLS (START / STOP) */
-
-.bx-wrapper .bx-controls-auto {
-	text-align: center;
-}
-
-.bx-wrapper .bx-controls-auto .bx-start {
-	display: block;
-	text-indent: -9999px;
-	width: 10px;
-	height: 11px;
-	outline: 0;
-	background: url(images/controls.png) -86px -11px no-repeat;
-	margin: 0 3px;
-}
-
-.bx-wrapper .bx-controls-auto .bx-start:hover,
-.bx-wrapper .bx-controls-auto .bx-start.active {
-	background-position: -86px 0;
-}
-
-.bx-wrapper .bx-controls-auto .bx-stop {
-	display: block;
-	text-indent: -9999px;
-	width: 9px;
-	height: 11px;
-	outline: 0;
-	background: url(images/controls.png) -86px -44px no-repeat;
-	margin: 0 3px;
-}
-
-.bx-wrapper .bx-controls-auto .bx-stop:hover,
-.bx-wrapper .bx-controls-auto .bx-stop.active {
-	background-position: -86px -33px;
-}
-
-/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
-
-.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
-	text-align: left;
-	width: 80%;
-}
-
-.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
-	right: 0;
-	width: 35px;
-}
-
-/* IMAGE CAPTIONS */
-
-.bx-wrapper .bx-caption {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	background: #666\9;
-	background: rgba(80, 80, 80, 0.75);
-	width: 100%;
-}
-
-.bx-wrapper .bx-caption span {
-	color: #fff;
-	font-family: Arial;
-	display: block;
-	font-size: .85em;
-	padding: 10px;
-}
+blockquote div {background: white;z-index: 1;border: 2px solid #C47719;margin-top: 40px;padding: 5px}
+/* Rules */
+.agreement .forum_box_mod {padding: 5px}
+.agreement .forum_box_mod ul {padding-left: 30px}
+.agreement .forum_box_mod ul li {list-style-type: disc}
+.submit_argeement a i {display: block;font-size: 50px;margin-bottom: 10px}
+.submit_argeement {text-align: center;background: #E9EAED}
+.submit_argeement a {padding: 5px;background: darkcyan;color: white;margin: 10px 20px;width: 110px;height: 90px}
+.submit_argeement a:hover {background: darkmagenta}
+/* confirm */
+.confirm .block_title {color: white;min-height: 66px}
+.confirm .forum_box_list {text-align: center}
+.confirm .submit_posting {margin: 10px 20px}
+.submit_posting.yes:after {content: "Đồng Ý"}
+.submit_posting.no:after {content: "Không"}
