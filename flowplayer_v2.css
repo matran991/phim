@@ -22,7 +22,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.flowplayer{position:relative;width:100%;counter-increment:flowplayer;background-size:contain;background-repeat:no-repeat;background-position:center center;display:inline-block;}
+.flowplayer{position:relative;width:100%;counter-increment:flowplayer;background-size:contain;background-repeat:no-repeat;background-position:center center;display:inline-block;background: black;}
 .flowplayer *{font-weight:inherit;font-family:inherit;font-style:inherit;text-decoration:inherit;font-size:100%;padding:0;border:0;margin:0;list-style-type:none}
 .flowplayer a:focus{outline:0}
 .flowplayer video{width:100%}
@@ -131,7 +131,7 @@
 .flowplayer.is-ready.is-closeable .fp-fullscreen{right:50px}
 .flowplayer.is-fullscreen .fp-fullscreen{display:block !important;}
 .flowplayer.is-fullscreen .fp-fullscreen:before{content:"\e601"}
-.flowplayer .fp-timeline{height:3px;position:relative;overflow:hidden;top:10px;height:10px;margin:0 225px 0 55px;}
+.flowplayer .fp-timeline{height:3px;position:relative;overflow:hidden;top:10px;height:10px;margin:0 225px 0 55px;width: inherit;float: none;}
 .no-brand.flowplayer .fp-timeline{margin-right:160px;}
 .has-menu.no-brand.flowplayer .fp-timeline{margin-right:187px}
 .no-volume.no-brand.flowplayer .fp-timeline{margin-right:95px}
@@ -168,7 +168,7 @@
 .is-rtl.aside-time.flowplayer .fp-timeline,.is-rtl.no-time.flowplayer .fp-timeline{margin:0 10px 0 115px}
 .is-rtl.aside-time.no-volume.flowplayer .fp-timeline,.is-rtl.no-time.no-volume.flowplayer .fp-timeline{margin-left:50px}
 .is-rtl.aside-time.no-mute.flowplayer .fp-timeline,.is-rtl.no-time.no-mute.flowplayer .fp-timeline{margin-left:10px}
-.flowplayer .fp-buffer,.flowplayer .fp-progress{position:absolute;top:0;left:auto;height:100%;cursor:col-resize}
+.flowplayer .fp-buffer,.flowplayer .fp-progress{position:absolute;top:0;left:auto;height:100%;cursor:col-resize;}
 .flowplayer .fp-buffer{-webkit-transition:width .25s linear;-moz-transition:width .25s linear;transition:width .25s linear}
 .flowplayer .fp-timeline.no-animation .fp-buffer{-webkit-transition:none;-moz-transition:none;transition:none}
 .flowplayer .fp-progress.animated{transition-timing-function:linear;transition-property:width,height}
@@ -182,7 +182,7 @@
 .flowplayer.is-touch.is-mouseover .fp-progress:after{height:18px;width:18px;top:-4px;right:-10px;border:5px solid rgba(255,255,255,0.65);-webkit-box-shadow:1px 0 4px rgba(0,0,0,0.5);-moz-box-shadow:1px 0 4px rgba(0,0,0,0.5);box-shadow:1px 0 4px rgba(0,0,0,0.5)}
 .flowplayer.is-touch.is-mouseover .fp-timeline.is-dragging .fp-progress:after{border:10px solid #fff;-webkit-border-radius:20px;-moz-border-radius:20px;border-radius:20px;-webkit-transition:inherit;-moz-transition:inherit;transition:inherit;top:-5px;right:-10px}
 .flowplayer.is-touch.is-rtl.is-mouseover .fp-timeline.is-dragging .fp-progress:after{left:-15px;right:auto;border:10px solid #fff}
-.flowplayer .fp-volume{position:absolute;top:12px;right:10px;}
+.flowplayer .fp-volume{position:absolute;top:12px;right:10px;width: inherit;}
 .has-menu.flowplayer .fp-volume{right:37px}
 .is-rtl.flowplayer .fp-volume{right:auto;left:10px}
 .is-rtl.has-menu.flowplayer .fp-volume{left:37px}
