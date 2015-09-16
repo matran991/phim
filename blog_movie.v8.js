@@ -1,9 +1,18 @@
+var check_get = true;
+var set_first = true;
+var auto_play = false;
+if($(window).width() < 860){
+	var height = "240";
+}
+else{
+	var height = "360";
+}
 function youtube(link,set_first){
   if(/youtube/gi.test(link) == true){
     var link = link.match(/(?:v=|v\/|embed\/|youtu.be\/)(.{11})/)[1];
     var link = 'https://www.youtube.com/embed/'+link+''; 
   }
-  var video = '<iframe width="100%" height="360" src="'+link+'" frameborder="0" allowfullscreen></iframe>';
+  var video = '<iframe width="100%" height="'+height+'" src="'+link+'" frameborder="0" allowfullscreen></iframe>';
     $('#view_video').html(video);
 }
 function google(file_1,file_2,type_1,type_2,image,set_first){
@@ -22,20 +31,25 @@ function google(file_1,file_2,type_1,type_2,image,set_first){
     }
     else{     
       var quality = '<div class="change_hd"><div class="change_content"><span onclick="changer_quality.call(this)" data="mhd" class="m_hd box_change active">Bản Thường</span><span onclick="changer_quality.call(this)" data="hd" class="full_hd box_change">Bản Đẹp</span></div></div>';
+      $('.video_quality').html(quality);
     }
   }
-  var video = '<video id="vd_google" class="markai_vd"  controls="controls" preload="auto" width="100%"  height="360" poster="'+image+'">';
-    video += '<source src="'+file+'" type="'+type+'" />';
-    video += '</video>';
-  $('#view_video').html(video);
-  $('#vd_google').mediaelementplayer({
-            success: function(player, node) {
-                player.addEventListener('ended', function(e){
-                    $('#episode .active').next('a').trigger('click');
-                });
-            }
-   });
-  if(set_first == false){var player2 = document.getElementById('vd_google');player2.play();}if(set_first == true){set_first = false;}
+    $('#view_video').html('<div  id="vd_google" class="markai_vd"></div>'); 
+    flowplayer("#vd_google", {
+      volume: 1.0,
+      poster: image,
+      autoplay: auto_play,
+      clip: {
+        sources: [
+          { type: type,
+            src:  file }
+        ]
+      }
+    });
+    auto_play = true;
+    $("#vd_google video").bind("ended", function() {
+      $('#episode .active').next('a').trigger('click');
+    });
 }
 function phimhd(){
     load_video();
@@ -53,16 +67,14 @@ function changer_quality(){
     $('.change_hd .active').removeClass('active');
     $(this).addClass('active');
     var type = $(this).attr('data');
-    var video = $('#vd_google_html5_api,#vd_google_html5_api source');
+    var video = $('#vd_google video');
     if(type.indexOf('mhd') > -1){
       video.attr('src', file_m);
     }
     else{
       video.attr('src', file_hd);
     }
-      var video = $('#vd_google_html5_api').get(0);
-      video.load();
-      video.play();
+    $('#vd_google video').get(0).play();
   }
 }
 function get_phim(link,set_first,host){
@@ -136,17 +148,24 @@ function zoom_in(){
 function zoom_out(){
 	var width = $('.media_block').width();
 	$('.media_body').animate({width: ''+width+'px'});
-	$('.box_box_right').animate({'margin-top': '0px'});
-}
-undefined
-function zoom_in(){
-	var width = $('.container').width();
-	var height = $('.media_body').height() + 75;
-	$('.media_body').animate({width: ''+width+'px'});
-	$('.box_box_right').animate({'margin-top': ''+height+'px'});
-}
-function zoom_out(){
-	var width = $('.media_block').width();
-	$('.media_body').animate({width: ''+width+'px'});
 	$('.box_box_right').animate({'margin-top': '20px'});
 }
+$(function() {
+    $('.mobile_video.phimhd').each(function() {
+      var box_episode = $(this).find('td').html();
+      var box_episode = '<div>' + box_episode + '</div>';
+      var box_episode = $(box_episode);
+      box_episode.find('strong').wrap('<span class="server"></span>');
+      box_episode.find('a').attr('onclick', 'event.preventDefault();phimhd.call(this)');
+      var video_first = box_episode.find('a:first').addClass('active').attr('href');
+      $('#episode').html(box_episode);
+      $('.mobile_video.phimhd').remove();
+      $('#player_video').fadeIn(500);
+      get_phim(video_first, set_first, host);
+    });
+    $('.spoiler_content div[align="justify"]').each(function() {
+      var a = $(this).html();
+      var a = a.replace(/\[color.+\"\]/gi, '');
+      $(this).html(a)
+    });
+  });
