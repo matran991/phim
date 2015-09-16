@@ -334,3 +334,5 @@
 }@keyframes functional-controls-hide{0%{opacity:0;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0)}
 100%{bottom:0;right:0;left:0;opacity:1;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100)}
 }
+.fp-help,.fp-context-menu {display: none!Important;}
+a[href="http://flowplayer.org"] {opacity: 0;}
