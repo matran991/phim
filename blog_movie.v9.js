@@ -77,26 +77,27 @@ function changer_quality(){
     $('#vd_google video').get(0).play();
   }
 }
-function get_phim(link,set_first,host){
-  if(check_get == true){
+function get_phim(link, set_first, host) {
+  if (check_get == true) {
     check_get = false;
     hosting = host;
-    $.getScript(''+host+'/phimhd.php?url='+link+'').done(function(){
-      if(data){
-        if(data.Video.file != undefined){
-          var file = data.Video.file;
-          if(/youtube|dailymotion/gi.test(file) == true){
-            youtube(file,set_first);
+    $.getScript('' + host + '/phimhd.php?url=' + link + '').done(function() {
+      if (video_html5 && video_html5 != "No link video") {
+        var data = video_html5;
+        if (data.file != undefined) {
+          var file = data.file;
+          if (/youtube|dailymotion/gi.test(file) == true) {
+            youtube(file, set_first);
+          }
+        } 
+        else if (data.playlist != undefined) {
+          var file = data.playlist;
+          if (/youtube|dailymotion/gi.test(file) == true) {
+            youtube(file, set_first);
           }
         }
-        else if(data.Video.playlist != undefined){
-          var file = data.Video.playlist;
-          if(/youtube|dailymotion/gi.test(file) == true){
-            youtube(file,set_first);
-          }
-        }
-        if(data.Video.sources){
-          var sources = data.Video.sources;
+        if (data.sources) {
+          var sources = data.sources;
           var sources_1 = sources[0];
           var file_1 = sources_1.file;
           var label_1 = sources_1.label;
@@ -104,7 +105,7 @@ function get_phim(link,set_first,host){
           file_m = file_1;
           type_m = type_1
           label_m = label_1;
-          if(typeof(data.Video.sources[1]) != 'undefined'){
+          if (typeof(data.sources[1]) != 'undefined') {
             var sources_2 = sources[1];
             var file_2 = sources_2.file;
             var label_2 = sources_2.label;
@@ -112,8 +113,7 @@ function get_phim(link,set_first,host){
             file_hd = file_2;
             type_hd = type_2
             label_hd = label_2;
-          }
-          else{
+          } else {
             var file_2 = false;
             var label_2 = false;
             var type_2 = false;
@@ -121,16 +121,15 @@ function get_phim(link,set_first,host){
             type_hd = false;
             label_hd = false;
           }
-          if(/\.jpg|\.gif|\.png|\.bmp/gi.test(file_1) == true){
+          if (/\.jpg|\.gif|\.png|\.bmp/gi.test(file_1) == true) {
             var image = true;
-          }
-          else{
+          } else {
             var image = false;
           }
-          google(file_1,file_2,type_1,type_2,image,set_first);
+          google(file_1, file_2, type_1, type_2, image, set_first);
         }
-      }
-      else{
+      } 
+      else {
         $('#view_video').html('<div class="warning warning alert alert-danger"><i class="fa fa-warning"></i>  Đã xảy ra lỗi, xin vui lòng thông báo với chúng tôi để sửa lỗi. Cảm ơn.</div>')
       }
     });
