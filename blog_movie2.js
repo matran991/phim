@@ -68,7 +68,7 @@ function changer_quality(){
   if(active.indexOf('active') > -1){
   }
   else{
-    $('.change_hd .active').removeClass('active');
+    $('.box_change.active').removeClass('active');
     $(this).addClass('active');
     var type = $(this).attr('data');
     var video = $('#vd_google video');
