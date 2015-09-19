@@ -2,10 +2,10 @@ var check_get = true;
 var set_first = true;
 var auto_play = false;
 if($(window).width() < 860){
-	var height = "240";
+  var height = "240";
 }
 else{
-	var height = "360";
+  var height = "360";
 }
 function youtube(link,set_first){
   if(/youtube/gi.test(link) == true){
@@ -30,7 +30,10 @@ function google(file_1,file_2,type_1,type_2,image,set_first){
       var quality = '';
     }
     else{     
-      var quality = '<div class="change_hd"><div class="change_content"><span onclick="changer_quality.call(this)" data="mhd" class="m_hd box_change active">Bản Thường</span><span onclick="changer_quality.call(this)" data="hd" class="full_hd box_change">Bản Đẹp</span></div></div>';
+      if(/720|1080|1280/.test(label_hd) == true){
+        label_hd = ''+ label_hd+'<small>HD</small>';
+      }
+      var quality = '<div class="change_hd"><div class="change_content"><span onclick="changer_quality.call(this)" data="mhd" class="m_hd box_change active">'+label_m+'</span><span onclick="changer_quality.call(this)" data="hd" class="full_hd box_change">'+label_hd+'</span></div></div>';
       $('.video_quality').html(quality);
     }
   }
@@ -50,6 +53,7 @@ function google(file_1,file_2,type_1,type_2,image,set_first){
     $("#vd_google video").bind("ended", function() {
       $('#episode .active').next('a').trigger('click');
     });
+    set_config();
 }
 function phimhd(){
     load_video();
@@ -139,15 +143,28 @@ function load_video(){
   $('#view_video').html('<div class="video_load mejs-container"><diiv class="load_img"><img src="http://mediaelementjs.com/js/mejs-2.18.1/loading.gif"><span>Đang Tải Phim</span></div></div>');
 }
 function zoom_in(){
-	var width = $('.container').width();
-	var height = $('.media_body').height() + 75;
-	$('.media_body').animate({width: ''+width+'px'});
-	$('.box_box_right').animate({'margin-top': ''+height+'px'});
+  $('.blog_view_topic,.box_box_right').removeClass('col-md-9').removeClass('col-md-3').addClass('col-md-12');
 }
 function zoom_out(){
-	var width = $('.media_block').width();
-	$('.media_body').animate({width: ''+width+'px'});
-	$('.box_box_right').animate({'margin-top': '20px'});
+  $('.blog_view_topic').removeClass('col-md-12').addClass('col-md-9');$('.box_box_right').removeClass('col-md-12').addClass('col-md-3');
+}
+function set_config(){
+  $('.change_hd').each(function(){
+     $('a.fp-brand').replaceWith('<div class="fp_config_fix"><span class="btt_config_video" onclick="config_open.call(this)"><i class="fa fa-cogs fa-2"></i></span><ul class="list_config hide"><li><span onclick="changer_quality.call(this)" data="mhd" class="m_hd box_change active">'+label_m+'</span></li><li><span onclick="changer_quality.call(this)" data="hd" class="full_hd box_change">'+label_hd+'</span></li></ul></div>');
+  });
+}
+function config_open(){
+  var a = $(this).closest('.fp_config_fix').find('.list_config');
+  var b = a.attr('class');
+  if(b.indexOf('hide') > -1){
+    var c = 'show';
+    a.removeClass('hide');
+  }
+  else{
+    var c = 'hide';
+    a.removeClass('show');
+  }
+  a.addClass(c);
 }
 $(function() {
     $('.mobile_video.phimhd').each(function() {
