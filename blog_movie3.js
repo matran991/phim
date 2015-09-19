@@ -166,6 +166,13 @@ function config_open(){
   }
   a.addClass(c);
 }
+$('.light_off').toggle(function(){
+  $(this).addClass('active');
+  $('body').addClass('off_video');
+  },function(){
+  $(this).removeClass('active');
+  $('body').removeClass('off_video');
+});
 $(function() {
     $('.mobile_video.phimhd').each(function() {
       var box_episode = $(this).find('td').html();
