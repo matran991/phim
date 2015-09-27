@@ -23,20 +23,26 @@ function google(file_1,file_2,type_1,type_2,image,set_first){
      var quality = "";
    }
   else{
-    var image = $('.spoiler_content img:first').attr('src');
-    var file = file_1;
-    var type = type_1;
-    if(file_2 == false){
-      var quality = '';
+     var image = $('.spoiler_content img:first').attr('src');
+     var file = file_1;
+     var type = type_1;
+     if(file_2 == false){
+       var quality = '';
+     }
+     else{
+       if(label_m.lenght > 1 && label_hd > 1){
+         if(/720|1080|1280/.test(label_hd) == true){
+           label_hd = ''+ label_hd+'<small>HD</small>';
+         }
+       }
+       else{
+         label_m = "Bản Thường";
+         label_hd = "Bản HD";
+       }            
+       var quality = '<div class="change_hd"><div class="change_content"><span onclick="changer_quality.call(this)" data="mhd" class="m_hd box_change active">'+label_m+'</span><span onclick="changer_quality.call(this)" data="hd" class="full_hd box_change">'+label_hd+'</span></div></div>';
+       $('.video_quality').html(quality);
     }
-    else{     
-      if(/720|1080|1280/.test(label_hd) == true){
-        label_hd = ''+ label_hd+'<small>HD</small>';
-      }
-      var quality = '<div class="change_hd"><div class="change_content"><span onclick="changer_quality.call(this)" data="mhd" class="m_hd box_change active">'+label_m+'</span><span onclick="changer_quality.call(this)" data="hd" class="full_hd box_change">'+label_hd+'</span></div></div>';
-      $('.video_quality').html(quality);
-    }
-   }
+  }
    if($(window).width() < 860){
      $('#view_video').html('<div  id="vd_google" class="markai_vd"><video src="'+file+'" poster="'+image+'" width="100%" height="240px" controls="controls"></video></div>');
      $('#vd_google video')[0].play();
@@ -123,7 +129,8 @@ function get_phim(link, set_first, host) {
             file_hd = file_2;
             type_hd = type_2
             label_hd = label_2;
-          } else {
+          } 
+          else {
             var file_2 = false;
             var label_2 = false;
             var type_2 = false;
