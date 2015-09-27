@@ -16,12 +16,12 @@ function youtube(link,set_first){
     $('#view_video').html(video);
 }
 function google(file_1,file_2,type_1,type_2,image,set_first){
-  if(image == true){
-    var image = file_1;
-    var file = file_2;
-    var type = type_2;
-    var quality = "";
-  }
+   if(image == true){
+     var image = file_1;
+     var file = file_2;
+     var type = type_2;
+     var quality = "";
+   }
   else{
     var image = $('.spoiler_content img:first').attr('src');
     var file = file_1;
@@ -36,24 +36,30 @@ function google(file_1,file_2,type_1,type_2,image,set_first){
       var quality = '<div class="change_hd"><div class="change_content"><span onclick="changer_quality.call(this)" data="mhd" class="m_hd box_change active">'+label_m+'</span><span onclick="changer_quality.call(this)" data="hd" class="full_hd box_change">'+label_hd+'</span></div></div>';
       $('.video_quality').html(quality);
     }
-  }
-    $('#view_video').html('<div  id="vd_google" class="markai_vd"></div>'); 
-    flowplayer("#vd_google", {
-      volume: 1.0,
-      poster: image,
-      autoplay: auto_play,
-      clip: {
-        sources: [
-          { type: type,
-            src:  file }
-        ]
-      }
-    });
-    auto_play = true;
-    $("#vd_google video").bind("ended", function() {
-      $('#episode .active').next('a').trigger('click');
-    });
-    set_config();
+   }
+   if($(window).width() < 860){
+     $('#view_video').html('<div  id="vd_google" class="markai_vd"><video src="'+file+'" poster="'+image+'" width="100%" height="240px" controls="controls"></video></div>');
+     $('#vd_google video')[0].play();
+   }
+   else{
+     $('#view_video').html('<div  id="vd_google" class="markai_vd"></div>'); 
+     flowplayer("#vd_google", {
+        volume: 1.0,
+        poster: image,
+        autoplay: auto_play,
+        clip: {
+          sources: [
+            { type: type,
+              src:  file }
+          ]
+       }
+     });
+   }
+   auto_play = true;
+   $("#vd_google video").bind("ended", function() {
+     $('#episode .active').next('a').trigger('click');
+   });
+   set_config();
 }
 function phimhd(){
     load_video();
